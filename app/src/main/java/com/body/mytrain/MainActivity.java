@@ -51,12 +51,9 @@ public class MainActivity extends AppCompatActivity {
         List<IFlexible> list = new ArrayList<>();
         list.add(new TrainElement("1", "Тренировка в зале", R.drawable.woman_in_gym));
         list.add(new TrainElement("2", "Тренировка на улице", R.drawable.train_in_street));
-        list.add(new TrainElement("1", "Тренировка в зале", R.mipmap.woman_train_in_gym));
-        list.add(new TrainElement("1", "Тренировка в зале", R.mipmap.woman_train_in_gym));
-        list.add(new TrainElement("1", "Тренировка в зале", R.mipmap.woman_train_in_gym));
-        list.add(new TrainElement("1", "Тренировка в зале", R.mipmap.woman_train_in_gym));
-        list.add(new TrainElement("1", "Тренировка в зале", R.mipmap.woman_train_in_gym));
-        list.add(new TrainElement("1", "Тренировка в зале", R.mipmap.woman_train_in_gym));
+        list.add(new TrainElement("3", "Тренировка на площадке", R.drawable.train_on_workout));
+        list.add(new TrainElement("4", "Тренировка дома", R.drawable.home_train));
+        list.add(new TrainElement("5", "Занятие йогой", R.drawable.train_jog));
         return list;
     }
 
