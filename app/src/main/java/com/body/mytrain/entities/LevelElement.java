@@ -1,16 +1,10 @@
 package com.body.mytrain.entities;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.body.mytrain.R;
-import com.body.mytrain.gymdifmvp.view.GymDiffActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,26 +14,23 @@ import eu.davidea.flexibleadapter.items.AbstractFlexibleItem;
 import eu.davidea.flexibleadapter.items.IFlexible;
 import eu.davidea.viewholders.FlexibleViewHolder;
 
-public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder> {
-
-    private Context mContext;
+public class LevelElement extends AbstractFlexibleItem<LevelElement.MyViewHolder> {
 
     private String id;
     private int title;
     private int uri;
 
 
-    public TrainElement(String id, int title, int uri, Context mContext) {
+    public LevelElement(String id, int title, int uri) {
         this.id = id;
         this.title = title;
         this.uri = uri;
-        this.mContext = mContext;
     }
 
     @Override
     public boolean equals(Object inObject) {
-        if (inObject instanceof TrainElement) {
-            TrainElement inItem = (TrainElement) inObject;
+        if(inObject instanceof LevelElement) {
+            LevelElement inItem = (LevelElement) inObject;
             return this.id.equals(inItem.id);
         }
         return false;
@@ -52,18 +43,19 @@ public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder
     }
 
 
+
     @Override
     public int getLayoutRes() {
-        return R.layout.train_item;
+        return R.layout.level_item;
     }
 
     @Override
-    public MyViewHolder createViewHolder(View view, FlexibleAdapter<IFlexible> adapter) {
-        return new MyViewHolder(view, adapter);
+    public LevelElement.MyViewHolder createViewHolder(View view, FlexibleAdapter<IFlexible> adapter) {
+        return new LevelElement.MyViewHolder(view, adapter);
     }
 
     @Override
-    public void bindViewHolder(FlexibleAdapter<IFlexible> adapter, MyViewHolder holder,
+    public void bindViewHolder(FlexibleAdapter<IFlexible> adapter, LevelElement.MyViewHolder holder,
                                int position,
                                List<Object> payloads) {
 
@@ -71,16 +63,6 @@ public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder
         Picasso.get()
                 .load(uri)
                 .into(holder.ivTrain);
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-               if(position == 0){
-                   goToGymActivity();
-               }
-            }
-        });
 
 
     }
@@ -92,19 +74,10 @@ public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder
         public MyViewHolder(View view, FlexibleAdapter adapter) {
 
             super(view, adapter);
-            ivTrain = view.findViewById(R.id.ivPhotoTrain);
-            tvTitle = view.findViewById(R.id.tvTitle);
-
-
+            ivTrain = view.findViewById(R.id.ivPhotoTrainLevel);
+            tvTitle = view.findViewById(R.id.tvLevelGrad);
         }
 
 
     }
-
-    public void goToGymActivity() {
-        Intent intent = new Intent(mContext, GymDiffActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        mContext.startActivity(intent);
-    }
-
 }

@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">MyTrain</string>
+
+    <!-- id collection -->
+    <string name="id_collection_1">1</string>
+    <string name="id_collection_2">2</string>
+    <string name="id_collection_3">3</string>
+    <string name="id_collection_4">4</string>
+    <string name="id_collection_5">5</string>
+    <string name="id_collection_6">6</string>
+    <string name="id_collection_7">7</string>
+    <string name="id_collection_8">8</string>
+    <string name="id_collection_9">9</string>
+    <string name="id_collection_10">10</string>
+
+    <!-- constant for collection-->
+    <string name="train_in_gym">Тренировка в зале</string>
+    <string name="train_in_street">Тренировка на улице</string>
+    <string name="train_on_workout">Тренировка на площадке</string>
+    <string name="home_train">Тренировка дома</string>
+    <string name="train_jog">Занятие йогой</string>
+    <string name="level">Уровень:</string>
+    <string name="noob">Новичок</string>
+    <string name="middle">Средний уровень</string>
+    <string name="high">Профессионал</string>
 </resources>

@@ -1,5 +1,9 @@
 package com.body.mytrain.gymdifmvp.contract;
 
+import java.util.List;
+
+import eu.davidea.flexibleadapter.items.IFlexible;
+
 public interface GYMDiffContract {
     interface ViewGym {
         void showRecyclerView();
@@ -8,7 +12,9 @@ public interface GYMDiffContract {
     interface PresenterGym {
         void onDifficultWasClicked();
 
-        void initDataOnRecyclerView();
+        List<IFlexible> initDataOnRecyclerView();
+
+        void onDestroy();
     }
 
 }

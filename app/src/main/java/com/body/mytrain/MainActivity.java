@@ -9,26 +9,33 @@ import butterknife.ButterKnife;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.IFlexible;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 import com.body.mytrain.entities.TrainElement;
+import com.body.mytrain.gymdifmvp.view.GymDiffActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
 
     @BindView(R.id.rvSportLists)
     RecyclerView rvListTrain;
 
     private FlexibleAdapter<IFlexible> mAdapter;
+    private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_sport_layout);
         ButterKnife.bind(this);
+        mContext = getApplicationContext();
         getFlexibleAdapter();
     }
 
@@ -39,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 GridLayoutManager.VERTICAL, false);
         rvListTrain.setLayoutManager(manager);
         List<IFlexible> myItems = getDatabaseList();
-
         mAdapter = new FlexibleAdapter<>(myItems);
         mAdapter.addListener(this);
         rvListTrain.setAdapter(mAdapter);
@@ -49,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
     public List<IFlexible> getDatabaseList() {
         List<IFlexible> list = new ArrayList<>();
-        list.add(new TrainElement("1", "Тренировка в зале", R.drawable.woman_in_gym));
-        list.add(new TrainElement("2", "Тренировка на улице", R.drawable.train_in_street));
-        list.add(new TrainElement("3", "Тренировка на площадке", R.drawable.train_on_workout));
-        list.add(new TrainElement("4", "Тренировка дома", R.drawable.home_train));
-        list.add(new TrainElement("5", "Занятие йогой", R.drawable.train_jog));
+        list.add(new TrainElement( "1", R.string.train_in_gym, R.drawable.woman_in_gym, mContext));
+        list.add(new TrainElement("2", R.string.train_in_street, R.drawable.train_in_street, mContext));
+        list.add(new TrainElement("3", R.string.train_on_workout, R.drawable.train_on_workout, mContext));
+        list.add(new TrainElement("4", R.string.home_train, R.drawable.home_train, mContext));
+        list.add(new TrainElement("5", R.string.train_jog, R.drawable.train_jog, mContext));
         return list;
     }
 
