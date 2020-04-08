@@ -1,9 +1,8 @@
-package com.body.mytrain.gymdifmvp.presenter;
+package com.body.mytrain.mvp.gymdif.presenter;
 
 import com.body.mytrain.R;
 import com.body.mytrain.entities.LevelElement;
-import com.body.mytrain.entities.TrainElement;
-import com.body.mytrain.gymdifmvp.contract.GYMDiffContract;
+import com.body.mytrain.mvp.gymdif.contract.GYMDiffContract;
 
 import java.util.ArrayList;
 import java.util.List;

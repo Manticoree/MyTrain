@@ -1,10 +1,10 @@
-package com.body.mytrain.gymdifmvp.view;
+package com.body.mytrain.mvp.gymdif.view;
 
 import android.os.Bundle;
 
 import com.body.mytrain.R;
-import com.body.mytrain.gymdifmvp.contract.GYMDiffContract;
-import com.body.mytrain.gymdifmvp.presenter.GYMDiffPresenter;
+import com.body.mytrain.mvp.gymdif.contract.GYMDiffContract;
+import com.body.mytrain.mvp.gymdif.presenter.GYMDiffPresenter;
 
 import java.util.List;
 

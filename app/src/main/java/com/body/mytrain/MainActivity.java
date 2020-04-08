@@ -4,19 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.IFlexible;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
 import com.body.mytrain.entities.TrainElement;
-import com.body.mytrain.gymdifmvp.view.GymDiffActivity;
+import com.body.mytrain.entities.bd.AppDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +26,7 @@ public class MainActivity extends AppCompatActivity  {
     RecyclerView rvListTrain;
 
     private FlexibleAdapter<IFlexible> mAdapter;
+    private AppDatabase persondb;
     private Context mContext;
 
     @Override
@@ -36,6 +35,8 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.main_sport_layout);
         ButterKnife.bind(this);
         mContext = getApplicationContext();
+        persondb = Room.databaseBuilder(mContext, AppDatabase.class, "person-database")
+                .build();
         getFlexibleAdapter();
     }
 

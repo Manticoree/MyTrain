@@ -1,4 +1,4 @@
-package com.body.mytrain.gymdifmvp.contract;
+package com.body.mytrain.mvp.gymdif.contract;
 
 import java.util.List;
 

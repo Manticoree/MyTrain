@@ -2,15 +2,12 @@ package com.body.mytrain.entities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.body.mytrain.R;
-import com.body.mytrain.gymdifmvp.view.GymDiffActivity;
+import com.body.mytrain.mvp.gymdif.view.GymDiffActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

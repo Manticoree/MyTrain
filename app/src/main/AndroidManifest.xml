@@ -19,9 +19,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".gymdifmvp.view.GymDiffActivity">
+        <activity android:name=".mvp.gymdif.view.GymDiffActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoActionBar"
+        >
+
         </activity>
 
     </application>
