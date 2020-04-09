@@ -1,5 +1,6 @@
 package com.body.mytrain.mvp.gymdif.view;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.body.mytrain.R;
@@ -24,13 +25,15 @@ public class GymDiffActivity extends AppCompatActivity implements GYMDiffContrac
 
     private GYMDiffContract.PresenterGym mPresenterGYM;
     private FlexibleAdapter<IFlexible> mAdapter;
+    private Context mContext;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gym_train_layout);
         ButterKnife.bind(this);
-        mPresenterGYM = new GYMDiffPresenter();
+        mContext = getApplicationContext();
+        mPresenterGYM = new GYMDiffPresenter(mContext);
         showRecyclerView();
     }
 

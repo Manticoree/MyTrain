@@ -1,10 +1,15 @@
 package com.body.mytrain.entities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.body.mytrain.R;
+import com.body.mytrain.mvp.gymdif.view.GymDiffActivity_ViewBinding;
+import com.body.mytrain.mvp.trainprogram.view.TrainProgramActivity;
+import com.body.mytrain.mvp.trainprogram.view.TrainProgramActivity_ViewBinding;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -16,15 +21,18 @@ import eu.davidea.viewholders.FlexibleViewHolder;
 
 public class LevelElement extends AbstractFlexibleItem<LevelElement.MyViewHolder> {
 
+    private Context mContext;
+
     private String id;
     private int title;
     private int uri;
 
 
-    public LevelElement(String id, int title, int uri) {
+    public LevelElement(String id, int title, int uri, Context mContext) {
         this.id = id;
         this.title = title;
         this.uri = uri;
+        this.mContext = mContext;
     }
 
     @Override
@@ -64,6 +72,17 @@ public class LevelElement extends AbstractFlexibleItem<LevelElement.MyViewHolder
                 .load(uri)
                 .into(holder.ivTrain);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(position == 0){
+                    goToTrainProgramActivity();
+                }
+            }
+        });
+
+
 
     }
 
@@ -79,5 +98,12 @@ public class LevelElement extends AbstractFlexibleItem<LevelElement.MyViewHolder
         }
 
 
+    }
+
+
+    public void goToTrainProgramActivity() {
+        Intent intent = new Intent(mContext, TrainProgramActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mContext.startActivity(intent);
     }
 }

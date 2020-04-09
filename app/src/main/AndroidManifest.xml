@@ -25,6 +25,12 @@
 
         </activity>
 
+        <activity android:name=".mvp.trainprogram.view.TrainProgramActivity"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+
     </application>
 
 </manifest>

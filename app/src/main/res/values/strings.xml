@@ -23,4 +23,18 @@
     <string name="noob">Новичок</string>
     <string name="middle">Средний уровень</string>
     <string name="high">Профессионал</string>
+    <string name="train_program">Программа тренировок</string>
+    <string name="first_day">1-й день</string>
+    <string name="second_day">2-й день</string>
+    <string name="third_day">3-й день</string>
+    <string name="tire">-</string>
+    
+    <!-- constant for exercices-->
+    <string name="stretch">Разминка</string>
+    <string name="deadlift">Становая тяга</string>
+    <string name="tilt_rod_pull">Тяга штанги в наклоне</string>
+    <string name="wide_grip_pull_ups">Подтягивания широким хватом</string>
+    <string name="barbell_lift">Подъем штанги на бицепс</string>
+    <string name="press">Любое упражнение на пресс (скручивания), без отягощения, 3 отказных сета</string>
+    <string name="hitch">Заминка</string>
 </resources>

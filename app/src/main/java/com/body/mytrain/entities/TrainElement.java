@@ -73,9 +73,9 @@ public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder
             @Override
             public void onClick(View view) {
 
-               if(position == 0){
-                   goToGymActivity();
-               }
+                if(position == 0){
+                    goToGymActivity();
+                }
             }
         });
 
