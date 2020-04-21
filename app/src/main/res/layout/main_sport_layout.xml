@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include layout="@layout/person_profile_layout"/>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/Widget.MaterialComponents.BottomAppBar"
         android:layout_width="match_parent"
@@ -36,11 +38,12 @@
         app:fabAlignmentMode="center"
         app:hideOnScroll="true"
         app:layout_scrollFlags="scroll|enterAlways"
+        app:navigationIcon="@drawable/baseline_menu_white_24"
         />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fabPersonPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/img_fab_profile_round"

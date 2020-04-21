@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.body.mytrain">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,13 +22,13 @@
         </activity>
 
         <activity android:name=".mvp.gymdif.view.GymDiffActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
         >
 
         </activity>
 
         <activity android:name=".mvp.trainprogram.view.TrainProgramActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             >
 
         </activity>

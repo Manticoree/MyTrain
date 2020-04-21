@@ -1,4 +1,6 @@
 package com.body.mytrain.mvp.personinformation.presenter;
 
-public class PersonInformationPresenter {
+import com.body.mytrain.mvp.personinformation.contract.PersonInformationContract;
+
+public class PersonInformationPresenter implements PersonInformationContract.PresenterPerson {
 }

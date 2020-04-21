@@ -37,4 +37,17 @@
     <string name="barbell_lift">Подъем штанги на бицепс</string>
     <string name="press">Любое упражнение на пресс (скручивания), без отягощения, 3 отказных сета</string>
     <string name="hitch">Заминка</string>
+    <string name="down_with_rod">Приседания со штангой</string>
+    <string name="press_legs">Жим ногами</string>
+    <string name="up_on_neck">Подъем на носках сидя</string>
+    <string name="press_down_small">Жим лежа узким хватом</string>
+    <string name="french_press">Французский жим</string>
+    <string name="press_down_huge">Жим лежа широким хватом</string>
+    <string name="press_on_branch">Отжимания на брусьях</string>
+    <string name="press_of_army">Армейский жим</string>
+    <string name="dumbbell_shrug">Разведение рук с гантелями</string>
+
+
+
+
 </resources>

@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.IFlexible;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
 import com.body.mytrain.entities.TrainElement;
 import com.body.mytrain.entities.bd.AppDatabase;
@@ -64,6 +66,11 @@ public class MainActivity extends AppCompatActivity  {
         return list;
     }
 
+
+    @OnClick(R.id.fabPersonPhoto)
+    void addPhoto(View view) {
+
+    }
 
 
 }
