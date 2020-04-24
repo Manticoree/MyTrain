@@ -21,11 +21,15 @@ import eu.davidea.viewholders.FlexibleViewHolder;
 
 public class LevelElement extends AbstractFlexibleItem<LevelElement.MyViewHolder> {
 
+    public static final String POSITION_ELEMENT =  "positionElement";
+
     private Context mContext;
 
     private String id;
     private int title;
     private int uri;
+
+    private int positionElement;
 
 
     public LevelElement(String id, int title, int uri, Context mContext) {
@@ -75,10 +79,10 @@ public class LevelElement extends AbstractFlexibleItem<LevelElement.MyViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if(position == 0){
+positionElement = position;
+              //  if(position == 0){
                     goToTrainProgramActivity();
-                }
+              //  }
             }
         });
 
@@ -103,6 +107,7 @@ public class LevelElement extends AbstractFlexibleItem<LevelElement.MyViewHolder
 
     public void goToTrainProgramActivity() {
         Intent intent = new Intent(mContext, TrainProgramActivity.class);
+        intent.putExtra(POSITION_ELEMENT, positionElement);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mContext.startActivity(intent);
     }

@@ -3,6 +3,7 @@ package com.body.mytrain.mvp.trainprogram.view;
 import android.os.Bundle;
 
 import com.body.mytrain.R;
+import com.body.mytrain.entities.LevelElement;
 import com.body.mytrain.mvp.trainprogram.contract.TrainProgramContract;
 import com.body.mytrain.mvp.trainprogram.presenter.TrainProgramPresenter;
 
@@ -19,6 +20,9 @@ import eu.davidea.flexibleadapter.items.IFlexible;
 
 public class TrainProgramActivity extends AppCompatActivity
         implements TrainProgramContract.View {
+    public static final int ZERO = 0;
+    public static final int ONE = 1;
+    public static final int TWO = 2;
 
     @BindView(R.id.rvFirstDay)
     RecyclerView rvFirstDay;
@@ -37,9 +41,19 @@ public class TrainProgramActivity extends AppCompatActivity
         setContentView(R.layout.train_program_layout);
         ButterKnife.bind(this);
         trainProgramPresenter = new TrainProgramPresenter();
-        showRecyclerView(rvFirstDay, trainProgramPresenter.initDataOnRecyclerView1Day());
-        showRecyclerView(rvSecondDay, trainProgramPresenter.initDataOnRecyclerView2Day());
-        showRecyclerView(rvThirdDay, trainProgramPresenter.initDataOnRecyclerView3Day());
+        Bundle arguments = getIntent().getExtras();
+        int positionElement = (int) arguments.get(LevelElement.POSITION_ELEMENT);
+        if(positionElement == ZERO) {
+            showRecyclerView(rvFirstDay, trainProgramPresenter.initDataOnRecyclerView1DayNoob());
+            showRecyclerView(rvSecondDay, trainProgramPresenter.initDataOnRecyclerView2DayNoob());
+            showRecyclerView(rvThirdDay, trainProgramPresenter.initDataOnRecyclerView3DayNoob());
+
+        } else if(positionElement == ONE){
+
+        } else if(positionElement == TWO){
+
+        }
+
 
     }
 

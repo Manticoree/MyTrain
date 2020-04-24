@@ -16,9 +16,17 @@ public interface TrainProgramContract {
     interface Presenter {
         void onWasClicked();
 
-        List<IFlexible> initDataOnRecyclerView1Day();
-        List<IFlexible> initDataOnRecyclerView2Day();
-        List<IFlexible> initDataOnRecyclerView3Day();
+        List<IFlexible> initDataOnRecyclerView1DayNoob();
+        List<IFlexible> initDataOnRecyclerView2DayNoob();
+        List<IFlexible> initDataOnRecyclerView3DayNoob();
+
+        List<IFlexible> initDataOnRecyclerView1DayMiddle();
+        List<IFlexible> initDataOnRecyclerView2DayMiddle();
+        List<IFlexible> initDataOnRecyclerView3DayMiddle();
+
+        List<IFlexible> initDataOnRecyclerView1DayPro();
+        List<IFlexible> initDataOnRecyclerView2DayPro();
+        List<IFlexible> initDataOnRecyclerView3DayPro();
 
         void onDestroy();
     }
