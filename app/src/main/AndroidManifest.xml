@@ -33,11 +33,17 @@
         </activity>
 
         <activity android:name=".mvp.trainprogram.view.TrainProgramActivity"
-            android:screenOrientation="fullSensor"
-            >
+            android:label="@string/train_program"
+            android:theme="@style/AppTheme.NoActionBar">
+            android:screenOrientation="fullSensor">
 
         </activity>
 
+
+        <activity android:name=".mvp.developwork.view.DevelopWorkActivity"
+            android:screenOrientation="fullSensor">
+
+        </activity>
     </application>
 
 </manifest>

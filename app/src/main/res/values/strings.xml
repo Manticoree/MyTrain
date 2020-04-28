@@ -33,6 +33,8 @@
     <string name="open">Открыть</string>
     <string name="camera">Камера</string>
     <string name="gallery">Галерея</string>
+    <string name="develop_works">Раздел находится в разработке.</string>
+    <string name="see_your_soon">Скоро будет доступен!</string>
 
 
     <!-- constant for exercices-->
@@ -58,6 +60,26 @@
     <string name="up_arms_on_gym">Поднятие(разведение) рук на тренажере</string>
     <string name="right_scroll">Прямое скручивание на скамье с гантелями</string>
     <string name="reverse_scroll">Обратное скручивание на скамье</string>
+    <string name="tilt_gantels_in_down">Тяга гантели в наклоне</string>
+    <string name="reverse_body_on_gym">Разгибания туловища на тренажере</string>
+    <string name="up_arms_with_gantels">Подъем плеч с гантелями</string>
+    <string name="reverse_push_up">Обратные отжимания</string>
+    <string name="french_gym_down">Французский жим сидя</string>
+    <string name="sgib_arms_with_gantels">Сгибания рук с гантелями сидя</string>
+    <string name="sgib_arms_with_gym">Сгибания рук со штангой</string>
+    <string name="rasgib_legs_on_gym">Разгибания ног на тренажере сидя</string>
+    <string name="mixing_legs_on_gym">Сведение ног на тренажере</string>
+    <string name="down_with_gym_on_arms">Наклоны со штангой на плечах</string>
+    <string name="step_on_the_step">Приставной шаг на степе</string>
+    <string name="jump_with_gantels">Выпрыгивания с гантелями</string>
+    <string name="press_gym_on_scum">Жим штанги на наклонной скамье</string>
+    <string name="Pullover">Пулловер</string>
+    <string name="Mixing_on_fitbol">Боковые скручивания на фитболе</string>
+    <string name="bicycle">Велосипед</string>
+
+
+
+
 
 
 

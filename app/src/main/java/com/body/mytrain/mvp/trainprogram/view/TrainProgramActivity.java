@@ -49,7 +49,9 @@ public class TrainProgramActivity extends AppCompatActivity
             showRecyclerView(rvThirdDay, trainProgramPresenter.initDataOnRecyclerView3DayNoob());
 
         } else if(positionElement == ONE){
-
+            showRecyclerView(rvFirstDay, trainProgramPresenter.initDataOnRecyclerView1DayMiddle());
+            showRecyclerView(rvSecondDay, trainProgramPresenter.initDataOnRecyclerView2DayMiddle());
+            showRecyclerView(rvThirdDay, trainProgramPresenter.initDataOnRecyclerView3DayMiddle());
         } else if(positionElement == TWO){
 
         }

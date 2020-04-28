@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.body.mytrain.R;
+import com.body.mytrain.constant.AppConstant;
+import com.body.mytrain.mvp.developwork.view.DevelopWorkActivity;
 import com.body.mytrain.mvp.gymdif.view.GymDiffActivity;
 import com.squareup.picasso.Picasso;
 
@@ -73,8 +75,16 @@ public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder
             @Override
             public void onClick(View view) {
 
-                if(position == 0){
+                if(position == AppConstant.ZERO){
                     goToGymActivity();
+                } else if(position == AppConstant.ONE){
+                    goToTechnicalWorkActivity();
+                }else if(position == AppConstant.TWO){
+                    goToTechnicalWorkActivity();
+                }else if(position == AppConstant.THREE){
+                    goToTechnicalWorkActivity();
+                }else if(position == AppConstant.FOUR){
+                    goToTechnicalWorkActivity();
                 }
             }
         });
@@ -100,6 +110,12 @@ public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder
 
     public void goToGymActivity() {
         Intent intent = new Intent(mContext, GymDiffActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mContext.startActivity(intent);
+    }
+
+    public void goToTechnicalWorkActivity() {
+        Intent intent = new Intent(mContext, DevelopWorkActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mContext.startActivity(intent);
     }

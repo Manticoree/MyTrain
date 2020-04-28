@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.body.mytrain"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -79,4 +79,10 @@ dependencies {
 
     // Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
+
+    //RotatingText
+    implementation "com.sdsmdg.harjot:rotatingtext:1.0.2"
+
+    //panorama image
+    implementation "com.gjiazhe:PanoramaImageView:1.0"
 }
