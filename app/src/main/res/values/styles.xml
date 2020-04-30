@@ -23,7 +23,7 @@
     <style name="HighLayoutText">
         <item name="android:textColor">@color/mainColorText</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:layout_margin">20dp</item>
+        <item name="android:layout_margin">4dp</item>
     </style>
 
     <style name="MediumLayoutText">
@@ -38,7 +38,9 @@
     <style name="LowLayoutText">
         <item name="android:textColor">@color/mainColorText</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:layout_margin">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
     </style>
 
 </resources>

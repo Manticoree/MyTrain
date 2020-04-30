@@ -4,8 +4,10 @@ import android.os.Bundle;
 
 import com.body.mytrain.R;
 import com.body.mytrain.entities.LevelElement;
+import com.body.mytrain.fragments.trainprogramfragment.AdapterTrainOneFragment;
 import com.body.mytrain.mvp.trainprogram.contract.TrainProgramContract;
 import com.body.mytrain.mvp.trainprogram.presenter.TrainProgramPresenter;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
 
@@ -13,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
@@ -24,13 +27,18 @@ public class TrainProgramActivity extends AppCompatActivity
     public static final int ONE = 1;
     public static final int TWO = 2;
 
+    @BindView(R.id.vpProgramTrain)
+    ViewPager vpProgramTrain;
+    @BindView(R.id.tabDiffTrain)
+    TabLayout tabDiffTrain;
+/*
     @BindView(R.id.rvFirstDay)
     RecyclerView rvFirstDay;
     @BindView(R.id.rvSecondDay)
     RecyclerView rvSecondDay;
     @BindView(R.id.rvThirdDay)
     RecyclerView rvThirdDay;
-
+*/
 
     private TrainProgramContract.Presenter trainProgramPresenter;
 
@@ -40,21 +48,22 @@ public class TrainProgramActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_program_layout);
         ButterKnife.bind(this);
-        trainProgramPresenter = new TrainProgramPresenter();
+       // trainProgramPresenter = new TrainProgramPresenter();
         Bundle arguments = getIntent().getExtras();
         int positionElement = (int) arguments.get(LevelElement.POSITION_ELEMENT);
+
         if(positionElement == ZERO) {
-            showRecyclerView(rvFirstDay, trainProgramPresenter.initDataOnRecyclerView1DayNoob());
-            showRecyclerView(rvSecondDay, trainProgramPresenter.initDataOnRecyclerView2DayNoob());
-            showRecyclerView(rvThirdDay, trainProgramPresenter.initDataOnRecyclerView3DayNoob());
-
-        } else if(positionElement == ONE){
-            showRecyclerView(rvFirstDay, trainProgramPresenter.initDataOnRecyclerView1DayMiddle());
-            showRecyclerView(rvSecondDay, trainProgramPresenter.initDataOnRecyclerView2DayMiddle());
-            showRecyclerView(rvThirdDay, trainProgramPresenter.initDataOnRecyclerView3DayMiddle());
-        } else if(positionElement == TWO){
-
+            vpProgramTrain.setAdapter(new AdapterTrainOneFragment(getSupportFragmentManager(),
+                    TrainProgramActivity.this, ZERO));
+        }else if(positionElement == ONE) {
+            vpProgramTrain.setAdapter(new AdapterTrainOneFragment(getSupportFragmentManager(),
+                    TrainProgramActivity.this, ONE));
+        }else if(positionElement == TWO){
+            vpProgramTrain.setAdapter(new AdapterTrainOneFragment(getSupportFragmentManager(),
+                    TrainProgramActivity.this, TWO));
         }
+
+        tabDiffTrain.setupWithViewPager(vpProgramTrain);
 
 
     }

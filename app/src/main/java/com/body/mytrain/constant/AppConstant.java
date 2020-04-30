@@ -10,4 +10,8 @@ public class AppConstant {
 
     public static final String developWorks = "Раздел находится в разработке.";
     public static final String seeYouSoon = "Скоро будет доступен!";
+
+    public static final String FIRST_DAY = "1-й день";
+    public static final String SECOND_DAY = "2-й день";
+    public static final String THIRD_DAY = "3-й день";
 }

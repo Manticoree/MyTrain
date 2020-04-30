@@ -10,7 +10,7 @@
 <com.google.android.material.appbar.AppBarLayout
     android:id="@+id/abExpPhoto"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="wrap_content"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     android:fitsSystemWindows="true"
     >
@@ -21,17 +21,17 @@
         android:layout_height="match_parent"
         app:layout_scrollFlags="scroll|exitUntilCollapsed"
         android:fitsSystemWindows="true"
-        app:contentScrim="?attr/colorPrimary"
         app:expandedTitleMarginStart="48dp"
         app:expandedTitleMarginEnd="64dp"
         >
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="200dp">
         <ImageView
             android:id="@+id/ivBackdropTrain"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:fitsSystemWindows="true"
             android:src="@drawable/photo_gym_free"
@@ -41,109 +41,51 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             />
+            <TextView
+                android:id="@+id/tvTextProgram"
+                style="@style/HighLayoutText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/train_program"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tbToolBar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="0dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|snap"
             />
 
     </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabDiffTrain"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorForToolBar"
+app:tabIndicatorColor="@color/white"
+        app:tabIndicatorHeight="6dp"
+        app:tabMode="fixed"
+        />
 
 </com.google.android.material.appbar.AppBarLayout>
 
 
 
-<!--
-<androidx.appcompat.widget.AppCompatImageView
-    android:id="@+id/ivTrainProgramPhoto"
+<androidx.viewpager.widget.ViewPager
+    android:id="@+id/vpProgramTrain"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
-    android:src="@drawable/photo_gym_free"
-    android:scaleType="centerCrop"
-    app:layout_constraintTop_toTopOf="parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
     />
-    <TextView
-        android:id="@+id/nameTrainProgram"
-        style="@style/HighLayoutText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/train_program"
-        android:textColor="@color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/ivTrainProgramPhoto"
-        />
-        -->
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
-        <!--app:layout_constraintTop_toBottomOf="@+id/abExpPhoto"-->
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/tvFirstDay"
-        style="@style/MediumLayoutText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/first_day"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvFirstDay"
-        style="@style/LowLayoutText"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFirstDay"
-        />
-
-    <TextView
-        android:id="@+id/tvSecondDay"
-        style="@style/MediumLayoutText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/second_day"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvFirstDay"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSecondDay"
-        style="@style/LowLayoutText"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecondDay"
-        />
-
-    <TextView
-        android:id="@+id/tvThirdDay"
-        style="@style/MediumLayoutText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/third_day"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rvSecondDay"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvThirdDay"
-        style="@style/LowLayoutText"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvThirdDay"
-        />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

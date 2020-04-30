@@ -6,4 +6,5 @@
 
     <color name="white">#FFFFFF</color>
     <color name="mainColorText">#5F4643</color>
+    <color name="colorForToolBar">#9A9A98</color>
 </resources>
