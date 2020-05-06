@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.body.mytrain.R;
 import com.body.mytrain.mvp.gymdif.contract.GYMDiffContract;
 import com.body.mytrain.mvp.gymdif.presenter.GYMDiffPresenter;
+import com.r0adkll.slidr.Slidr;
 
 import java.util.List;
 
@@ -35,6 +36,14 @@ public class GymDiffActivity extends AppCompatActivity implements GYMDiffContrac
         mContext = getApplicationContext();
         mPresenterGYM = new GYMDiffPresenter(mContext);
         showRecyclerView();
+
+        //todo сделать отдельный поток для слайдера
+        /*
+        int primary = getResources().getColor(R.color.colorPrimaryDark);
+        int secondary = getResources().getColor(R.color.colorPrimary);
+        Slidr.attach(this, primary, secondary);
+
+         */
     }
 
     @Override

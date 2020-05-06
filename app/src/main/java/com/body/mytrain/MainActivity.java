@@ -10,6 +10,7 @@ import androidx.room.Room;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.IFlexible;
 
@@ -48,8 +49,10 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rvListTrain;
     @BindView(R.id.rvAnotherTrain)
     RecyclerView rvAnotherTrain;
-    @BindView(R.id.fabPersonPhoto)
-    FloatingActionButton fabPersonPhoto;
+    /*
+    @BindView(R.id.civMyPhoto)
+    CircleImageView civMyPhoto;
+*/
 
     private AppDatabase persondb;
     private Context mContext;
@@ -72,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
+            /*
             if (extras != null) {
                 Bitmap imageBitmap = (Bitmap) extras.get("data");
                 getPhotoFromCamera(imageBitmap);
@@ -83,7 +87,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+            */
+
         }
+
+
     }
 
 
@@ -106,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
         List<IFlexible> list = new ArrayList<>();
         list.add(new TrainElement("1", R.string.train_in_gym, R.drawable.woman_in_gym, mContext));
         list.add(new TrainElement("2", R.string.train_in_street, R.drawable.train_in_street, mContext));
-        list.add(new TrainElement("3", R.string.train_on_workout, R.drawable.train_on_workout, mContext));
         list.add(new TrainElement("4", R.string.home_train, R.drawable.home_train, mContext));
         list.add(new TrainElement("5", R.string.train_jog, R.drawable.train_jog, mContext));
         return list;
@@ -114,15 +121,15 @@ public class MainActivity extends AppCompatActivity {
 
     public List<IFlexible> getAnotherList() {
         List<IFlexible> list = new ArrayList<>();
-        list.add(new AnotherTrainElement("1", R.string.run_train, R.drawable.another_train_run, mContext));
+        list.add(new AnotherTrainElement("1", R.string.plane_food, R.drawable.plane_food_free, mContext));
         list.add(new AnotherTrainElement("2", R.string.run_train, R.drawable.another_train_run, mContext));
-        list.add(new AnotherTrainElement("3", R.string.run_train, R.drawable.another_train_run, mContext));
+        list.add(new AnotherTrainElement("3", R.string.calculate_BGU, R.drawable.calculate_bgu_free, mContext));
         return list;
 
     }
 
-
-    @OnClick(R.id.fabPersonPhoto)
+/*
+    @OnClick(R.id.civMyPhoto)
     void addPhoto(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.select_image);
@@ -143,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-
+*/
     public void takePictureFromCamera() {
         Intent takePicturefromCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePicturefromCamera.resolveActivity(getPackageManager()) != null) {
@@ -156,23 +163,21 @@ public class MainActivity extends AppCompatActivity {
         photoPickerIntent.setType("image/*");
         startActivityForResult(photoPickerIntent, REQUEST_IMAGE_CAPTURE);
     }
-
+/*
     public void getPhotoFromCamera(Bitmap pathToImage) {
-        /*
-        Picasso.get()
-                .load(pathToImage.)
-                .into(fabPersonPhoto);
 
-         */
 
-        fabPersonPhoto.setImageBitmap(pathToImage);
+
+
+
+        civMyPhoto.setImageBitmap(pathToImage);
     }
 
     public void getPhotoFromGallery(Uri uri) {
         Picasso.get()
                 .load(uri.getPath())
-                .into(fabPersonPhoto);
+                .into(civMyPhoto);
     }
-
+*/
 
 }

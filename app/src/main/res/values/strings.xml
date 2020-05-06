@@ -19,7 +19,9 @@
     <string name="train_on_workout">Тренировка на площадке</string>
     <string name="home_train">Тренировка дома</string>
     <string name="train_jog">Занятие йогой</string>
-    <string name="run_train">Беговая тренировка</string>
+    <string name="run_train">Беговая тренировка c отслеживанием маршрута</string>
+    <string name="plane_food">План питания</string>
+    <string name="calculate_BGU">Расчет БЖУ</string>
     <string name="level">Уровень:</string>
     <string name="noob">Новичок</string>
     <string name="middle">Средний уровень</string>
@@ -35,6 +37,7 @@
     <string name="gallery">Галерея</string>
     <string name="develop_works">Раздел находится в разработке.</string>
     <string name="see_your_soon">Скоро будет доступен!</string>
+    <string name="my_plain">Личный план</string>
 
 
     <!-- constant for exercices-->

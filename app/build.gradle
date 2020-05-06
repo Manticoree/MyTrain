@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.body.mytrain"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -85,4 +85,13 @@ dependencies {
 
     //panorama image
     implementation "com.gjiazhe:PanoramaImageView:1.0"
+
+    //circle image
+    implementation "de.hdodenhof:circleimageview:3.1.0"
+
+    //slidr between activity
+    implementation "com.r0adkll:slidableactivity:2.1.0"
+
+    //page transformer
+    implementation"com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24"
 }

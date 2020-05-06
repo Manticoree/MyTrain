@@ -8,6 +8,7 @@ import com.body.mytrain.fragments.trainprogramfragment.AdapterTrainOneFragment;
 import com.body.mytrain.mvp.trainprogram.contract.TrainProgramContract;
 import com.body.mytrain.mvp.trainprogram.presenter.TrainProgramPresenter;
 import com.google.android.material.tabs.TabLayout;
+import com.r0adkll.slidr.Slidr;
 
 import java.util.List;
 
@@ -55,6 +56,7 @@ public class TrainProgramActivity extends AppCompatActivity
         if(positionElement == ZERO) {
             vpProgramTrain.setAdapter(new AdapterTrainOneFragment(getSupportFragmentManager(),
                     TrainProgramActivity.this, ZERO));
+
         }else if(positionElement == ONE) {
             vpProgramTrain.setAdapter(new AdapterTrainOneFragment(getSupportFragmentManager(),
                     TrainProgramActivity.this, ONE));
@@ -64,6 +66,8 @@ public class TrainProgramActivity extends AppCompatActivity
         }
 
         tabDiffTrain.setupWithViewPager(vpProgramTrain);
+
+
 
 
     }

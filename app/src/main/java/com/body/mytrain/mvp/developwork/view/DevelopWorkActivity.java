@@ -8,6 +8,7 @@ import com.body.mytrain.constant.AppConstant;
 import com.body.mytrain.mvp.developwork.contract.DevelopWorkContract;
 import com.gjiazhe.panoramaimageview.GyroscopeObserver;
 import com.gjiazhe.panoramaimageview.PanoramaImageView;
+import com.r0adkll.slidr.Slidr;
 import com.sdsmdg.harjot.rotatingtext.RotatingTextWrapper;
 import com.sdsmdg.harjot.rotatingtext.models.Rotatable;
 
@@ -32,6 +33,11 @@ public class DevelopWorkActivity extends AppCompatActivity implements DevelopWor
         ButterKnife.bind(this);
         createGyroscopeControl(panTechWork);
         createCustomSwitcher();
+        /*
+        int primary = getResources().getColor(R.color.colorPrimaryDark);
+        int secondary = getResources().getColor(R.color.colorPrimary);
+        Slidr.attach(this, primary, secondary);
+         */
     }
 
     @Override
