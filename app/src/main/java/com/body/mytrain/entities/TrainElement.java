@@ -1,7 +1,11 @@
 package com.body.mytrain.entities;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,6 +14,9 @@ import com.body.mytrain.R;
 import com.body.mytrain.constant.AppConstant;
 import com.body.mytrain.mvp.developwork.view.DevelopWorkActivity;
 import com.body.mytrain.mvp.gymdif.view.GymDiffActivity;
+import com.body.mytrain.mvp.trainhomeprogram.view.TrainHomeActivity;
+import com.body.mytrain.mvp.trainjogprogram.view.TrainJogProgramActivity;
+import com.body.mytrain.mvp.trainstreetprogram.view.TrainStreetProgramActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -26,6 +33,8 @@ public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder
     private String id;
     private int title;
     private int uri;
+
+    private Bundle bundle = null;
 
 
     public TrainElement(String id, int title, int uri, Context mContext) {
@@ -78,11 +87,11 @@ public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder
                 if(position == AppConstant.ZERO){
                     goToGymActivity();
                 } else if(position == AppConstant.ONE){
-                    goToTechnicalWorkActivity();
+                    goToStreetActivity(view);
                 }else if(position == AppConstant.TWO){
-                    goToTechnicalWorkActivity();
+                    goToHomeActivity(view);
                 }else if(position == AppConstant.THREE){
-                    goToTechnicalWorkActivity();
+                    goToJogActivity(view);
                 }else if(position == AppConstant.FOUR){
                     goToTechnicalWorkActivity();
                 }
@@ -113,11 +122,54 @@ public class TrainElement extends AbstractFlexibleItem<TrainElement.MyViewHolder
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mContext.startActivity(intent);
     }
+    public void goToStreetActivity(View view) {
+
+transition(view);
+        Intent intent = new Intent(mContext, TrainStreetProgramActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (bundle == null) {
+            mContext.startActivity(intent);
+        }else{
+            mContext.startActivity(intent, bundle);
+        }
+    }
+    public void goToHomeActivity(View view) {
+        transition(view);
+        Intent intent = new Intent(mContext, TrainHomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (bundle == null) {
+            mContext.startActivity(intent);
+        }else{
+            mContext.startActivity(intent, bundle);
+        }
+    }
+    public void goToJogActivity(View view) {
+        transition(view);
+        Intent intent = new Intent(mContext, TrainJogProgramActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (bundle == null) {
+            mContext.startActivity(intent);
+        }else{
+            mContext.startActivity(intent, bundle);
+        }
+    }
 
     public void goToTechnicalWorkActivity() {
         Intent intent = new Intent(mContext, DevelopWorkActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mContext.startActivity(intent);
+    }
+
+    public void transition(View view){
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            if(view != null){
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(
+                        (Activity) mContext,
+                        view,
+                        mContext.getString(R.string.transition_train));
+                bundle = options.toBundle();
+            }
+        }
     }
 
 }

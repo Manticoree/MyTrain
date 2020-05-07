@@ -38,6 +38,8 @@
     <string name="develop_works">Раздел находится в разработке.</string>
     <string name="see_your_soon">Скоро будет доступен!</string>
     <string name="my_plain">Личный план</string>
+    <string name="train_different_parts">Тренировка разных частей тела</string>
+    <string name="transition_train">transition train</string>
 
 
     <!-- constant for exercices-->

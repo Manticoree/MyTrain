@@ -1,4 +1,6 @@
 package com.body.mytrain.mvp.planefood.presenter;
 
-public class PlaneFoodPresenter {
+import com.body.mytrain.mvp.planefood.contract.PlaneFoodContract;
+
+public class PlaneFoodPresenter implements PlaneFoodContract.IPlaneFoodPresenter {
 }

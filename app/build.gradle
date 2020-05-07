@@ -94,4 +94,10 @@ dependencies {
 
     //page transformer
     implementation"com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24"
+
+    //epoxy expand rec view
+    implementation "com.airbnb.android:epoxy:3.9.0"
+    annotationProcessor "com.airbnb.android:epoxy-processor:3.9.0"
+
+
 }

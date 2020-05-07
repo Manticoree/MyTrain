@@ -1,4 +1,7 @@
 package com.body.mytrain.mvp.planefood.view;
 
-public class PlaneFoodActivity {
+import com.body.mytrain.mvp.planefood.contract.PlaneFoodContract;
+
+public class PlaneFoodActivity implements PlaneFoodContract.IPlaneFoodView {
+
 }

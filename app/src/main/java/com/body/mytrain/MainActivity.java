@@ -14,6 +14,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.IFlexible;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -47,8 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.rvSportLists)
     RecyclerView rvListTrain;
+
     @BindView(R.id.rvAnotherTrain)
     RecyclerView rvAnotherTrain;
+
     /*
     @BindView(R.id.civMyPhoto)
     CircleImageView civMyPhoto;
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_sport_layout);
         ButterKnife.bind(this);
-        mContext = getApplicationContext();
+        mContext = this;
         persondb = Room.databaseBuilder(mContext, AppDatabase.class, "person-database")
                 .build();
         getFlexibleAdapter(rvListTrain, getDatabaseList(), LinearLayoutManager.VERTICAL);
@@ -112,17 +115,17 @@ public class MainActivity extends AppCompatActivity {
 
     public List<IFlexible> getDatabaseList() {
         List<IFlexible> list = new ArrayList<>();
-        list.add(new TrainElement("1", R.string.train_in_gym, R.drawable.woman_in_gym, mContext));
-        list.add(new TrainElement("2", R.string.train_in_street, R.drawable.train_in_street, mContext));
-        list.add(new TrainElement("4", R.string.home_train, R.drawable.home_train, mContext));
-        list.add(new TrainElement("5", R.string.train_jog, R.drawable.train_jog, mContext));
+        list.add(new TrainElement("1", R.string.train_in_gym, R.drawable.woman_in_gym_free, mContext));
+        list.add(new TrainElement("2", R.string.train_in_street, R.drawable.train_in_street_free, mContext));
+        list.add(new TrainElement("4", R.string.home_train, R.drawable.home_train_free, mContext));
+        list.add(new TrainElement("5", R.string.train_jog, R.drawable.train_jog_free, mContext));
         return list;
     }
 
     public List<IFlexible> getAnotherList() {
         List<IFlexible> list = new ArrayList<>();
         list.add(new AnotherTrainElement("1", R.string.plane_food, R.drawable.plane_food_free, mContext));
-        list.add(new AnotherTrainElement("2", R.string.run_train, R.drawable.another_train_run, mContext));
+        list.add(new AnotherTrainElement("2", R.string.run_train, R.drawable.another_train_run_free, mContext));
         list.add(new AnotherTrainElement("3", R.string.calculate_BGU, R.drawable.calculate_bgu_free, mContext));
         return list;
 

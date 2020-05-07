@@ -44,6 +44,21 @@
             android:screenOrientation="fullSensor">
 
         </activity>
+
+        <activity android:name=".mvp.trainstreetprogram.view.TrainStreetProgramActivity"
+            android:screenOrientation="fullSensor">
+
+        </activity>
+
+        <activity android:name=".mvp.trainhomeprogram.view.TrainHomeActivity"
+            android:screenOrientation="fullSensor">
+
+        </activity>
+
+        <activity android:name=".mvp.trainjogprogram.view.TrainJogProgramActivity"
+            android:screenOrientation="fullSensor">
+
+        </activity>
     </application>
 
 </manifest>
