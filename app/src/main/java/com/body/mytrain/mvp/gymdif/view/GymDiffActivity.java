@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import com.body.mytrain.R;
+import com.body.mytrain.mainclass.BaseActivity;
 import com.body.mytrain.mvp.gymdif.contract.GYMDiffContract;
 import com.body.mytrain.mvp.gymdif.presenter.GYMDiffPresenter;
 import com.r0adkll.slidr.Slidr;
@@ -19,7 +20,7 @@ import butterknife.ButterKnife;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.IFlexible;
 
-public class GymDiffActivity extends AppCompatActivity implements GYMDiffContract.ViewGym {
+public class GymDiffActivity extends BaseActivity implements GYMDiffContract.ViewGym {
 
     @BindView(R.id.rvDiffGym)
     RecyclerView rvDiffGym;
@@ -35,7 +36,7 @@ public class GymDiffActivity extends AppCompatActivity implements GYMDiffContrac
         ButterKnife.bind(this);
         mContext = getApplicationContext();
         mPresenterGYM = new GYMDiffPresenter(mContext);
-        showRecyclerView();
+        showRecyclerView(rvDiffGym, mPresenterGYM.initDataOnRecyclerView());
 
         //todo сделать отдельный поток для слайдера
         /*
@@ -46,18 +47,7 @@ public class GymDiffActivity extends AppCompatActivity implements GYMDiffContrac
          */
     }
 
-    @Override
-    public void showRecyclerView() {
-        rvDiffGym.setHasFixedSize(true);
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(this,
-                LinearLayoutManager.VERTICAL,
-                false);
-        rvDiffGym.setLayoutManager(manager);
-        List<IFlexible> myItems = mPresenterGYM.initDataOnRecyclerView();
-        mAdapter = new FlexibleAdapter<>(myItems);
-        mAdapter.addListener(this);
-        rvDiffGym.setAdapter(mAdapter);
-    }
+
 
     @Override
     protected void onDestroy() {

@@ -1,23 +1,18 @@
-package com.body.mytrain.fragments.trainprogramfragment;
-
-import com.body.mytrain.mvp.trainprogram.contract.TrainProgramContract;
+package com.body.mytrain.mainclass;
 
 import java.util.List;
 
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import eu.davidea.flexibleadapter.FlexibleAdapter;
 import eu.davidea.flexibleadapter.items.IFlexible;
 
-public class TrainFragment extends Fragment {
-
-    public static final String ARG_PAGE = "ARG_PAGE";
-
+public class BaseActivity extends AppCompatActivity {
     public void showRecyclerView(RecyclerView recView,
                                  List<IFlexible> initList) {
         recView.setHasFixedSize(true);
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(getActivity(),
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL,
                 false);
         recView.setLayoutManager(manager);
@@ -26,4 +21,6 @@ public class TrainFragment extends Fragment {
         adapter.addListener(this);
         recView.setAdapter(adapter);
     }
+
+
 }

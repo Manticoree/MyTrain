@@ -1,8 +1,9 @@
-package com.body.mytrain.fragments.trainprogramfragment;
+package com.body.mytrain.fragments.trainprogramfragment.gymfragment;
 
 import android.content.Context;
 
 import com.body.mytrain.constant.AppConstant;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,14 +11,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class AdapterTrainOneFragment extends FragmentPagerAdapter {
+public class AdapterTrainGymFragment extends FragmentPagerAdapter {
     final int PAGE_COUNT = 3;
     private String tabTitles[] = new String[] {AppConstant.FIRST_DAY,
             AppConstant.SECOND_DAY, AppConstant.THIRD_DAY };
     private Context context;
     private int diffPosition;
 
-    public AdapterTrainOneFragment(@NonNull FragmentManager fm,
+    public AdapterTrainGymFragment(@NonNull FragmentManager fm,
                                    Context context, int diffPosition) {
         super(fm);
         this.context = context;
