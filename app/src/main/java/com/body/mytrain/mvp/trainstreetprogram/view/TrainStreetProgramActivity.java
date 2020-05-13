@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.body.mytrain.R;
 import com.body.mytrain.constant.AppConstant;
 import com.body.mytrain.fragments.trainprogramfragment.gymfragment.AdapterTrainGymFragment;
+import com.body.mytrain.fragments.trainprogramfragment.streetFragment.AdapterTrainStreetFragment;
 import com.body.mytrain.mainclass.BaseActivity;
 import com.body.mytrain.mvp.trainstreetprogram.contract.TrainStreetProgramContract;
 import com.google.android.material.tabs.TabLayout;
@@ -29,7 +30,7 @@ public class TrainStreetProgramActivity extends BaseActivity
         setContentView(R.layout.train_street_layout);
         ButterKnife.bind(this);
         Bundle arguments = getIntent().getExtras();
-       vpProgramTrain.setAdapter(new AdapterTrainGymFragment(getSupportFragmentManager(),
+       vpProgramTrain.setAdapter(new AdapterTrainStreetFragment(getSupportFragmentManager(), 1,
                TrainStreetProgramActivity.this, AppConstant.ZERO));
        tabDiffTrain.setupWithViewPager(vpProgramTrain);
 

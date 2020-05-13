@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.body.mytrain.R;
-import com.body.mytrain.constant.AppConstant;
 import com.body.mytrain.fragments.trainprogramfragment.BaseFragment;
 import com.body.mytrain.mvp.trainstreetprogram.contract.TrainStreetProgramContract;
 import com.body.mytrain.mvp.trainstreetprogram.presenter.TrainStreetProgramPresenter;
@@ -17,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class TrainOneStreetFragment extends BaseFragment {
+public class TrainFourStreetFragment extends BaseFragment {
     @BindView(R.id.rvFirstDay)
     RecyclerView rvFirstDay;
 
@@ -25,10 +24,10 @@ public class TrainOneStreetFragment extends BaseFragment {
     private int mPage;
     private static int position;
 
-    public static TrainOneStreetFragment newInstance(int page, int diffPosition) {
+    public static TrainFourStreetFragment newInstance(int page, int diffPosition) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
-        TrainOneStreetFragment fragment = new TrainOneStreetFragment();
+        TrainFourStreetFragment fragment = new TrainFourStreetFragment();
         fragment.setArguments(args);
         position = diffPosition;
         return fragment;
@@ -51,7 +50,7 @@ public class TrainOneStreetFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.train_fragment, container, false);
         ButterKnife.bind(this, view);
 
-            showRecyclerView(rvFirstDay, trainStreetProgramPresenter.initDataOnRecyclerView1Level());
+        showRecyclerView(rvFirstDay, trainStreetProgramPresenter.initDataOnRecyclerView4Level());
 
 
         return view;

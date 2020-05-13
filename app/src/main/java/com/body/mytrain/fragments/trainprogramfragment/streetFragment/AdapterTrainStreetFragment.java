@@ -13,9 +13,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 public class AdapterTrainStreetFragment extends FragmentPagerAdapter {
-    final int PAGE_COUNT = 3;
-    private String tabTitles[] = new String[] {AppConstant.FIRST_DAY,
-            AppConstant.SECOND_DAY, AppConstant.THIRD_DAY };
+    final int PAGE_COUNT = 4;
+    private String tabTitles[] = new String[] {AppConstant.FIRST_LEVEL,
+            AppConstant.SECOND_LEVEL, AppConstant.THIRD_LEVEL, AppConstant.FOUR_LEVEL };
     private Context context;
     private int diffPosition;
 
@@ -32,9 +32,11 @@ public class AdapterTrainStreetFragment extends FragmentPagerAdapter {
         if(position==0) {
             return TrainOneStreetFragment.newInstance(position + 1, diffPosition);
         }else if(position == 1){
-            return TrainTwoFragment.newInstance(position + 1, diffPosition);
+            return TrainTwoStreetFragment.newInstance(position + 1, diffPosition);
+        }else if(position == 2){
+            return TrainThreeStreetFragment.newInstance(position + 1, diffPosition);
         }else{
-            return TrainThreeFragment.newInstance(position + 1, diffPosition);
+            return TrainFourStreetFragment.newInstance(position + 1, diffPosition);
         }
     }
 

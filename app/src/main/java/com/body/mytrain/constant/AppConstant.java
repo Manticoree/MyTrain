@@ -14,4 +14,9 @@ public class AppConstant {
     public static final String FIRST_DAY = "1-й день";
     public static final String SECOND_DAY = "2-й день";
     public static final String THIRD_DAY = "3-й день";
+
+    public static final String FIRST_LEVEL = "Уровень 1";
+    public static final String SECOND_LEVEL = "Уровень 2";
+    public static final String THIRD_LEVEL = "Уровень 3";
+    public static final String FOUR_LEVEL = "Уровень 4";
 }
